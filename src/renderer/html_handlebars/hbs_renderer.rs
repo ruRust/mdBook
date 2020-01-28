@@ -72,6 +72,7 @@ impl HtmlHandlebars {
                 "path_to_root".to_owned(),
                 json!(utils::fs::path_to_root(&ch.path)),
             );
+            ctx.data.insert("filename".to_owned(), json!(filepath));
             if let Some(ref section) = ch.number {
                 ctx.data
                     .insert("section".to_owned(), json!(section.to_string()));
